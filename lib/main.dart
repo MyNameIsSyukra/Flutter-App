@@ -7,6 +7,7 @@ import 'pages/choose_location.dart';
 import 'pages/loading.dart';
 import 'pages/quoteList.dart';
 import 'pages/todos_page.dart';
+import 'pages/note_page.dart';
 
 void main() => runApp(MaterialApp(
     initialRoute: '/home',
@@ -17,6 +18,7 @@ void main() => runApp(MaterialApp(
       '/loading': (context) => loading(),
       '/quote': (context) => QuoteList(),
       '/time': (context) => timeWorld(),
+      '/note': (context) => NotesPage(),
     }
   ));
 

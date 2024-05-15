@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import '../services/word_time.dart';
-
+import 'package:firstapp/database/notes_databases.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -15,6 +15,12 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
+  }
+  @override
+  void dispose() {
+    NotesDatabase.instance.close();
+
+    super.dispose();
   }
   @override
   Widget build(BuildContext context) {
@@ -172,6 +178,20 @@ class _HomeState extends State<Home> {
                       ),
                       onPressed: (){Navigator.pushNamed(context, '/todo');},
                       child: const Text('ToDo', style: TextStyle(
+                        color: Colors.white,
+                        fontSize:15,
+                      ),),
+                    ),
+                    SizedBox(width: 50),
+                    TextButton(
+                      style: ButtonStyle(
+                        fixedSize: MaterialStateProperty.all<Size>(
+                          Size(125.0, 50.0), // Button width and height
+                        ),
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.black), // Ganti dengan warna yang diinginkan
+                      ),
+                      onPressed: (){Navigator.pushNamed(context, '/note');},
+                      child: const Text('Note', style: TextStyle(
                         color: Colors.white,
                         fontSize:15,
                       ),),
