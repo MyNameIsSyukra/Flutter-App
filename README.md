@@ -1,6 +1,7 @@
 # firstapp
-
 A new Flutter project.
+
+Video Demo Singkat : https://youtu.be/yxThY8wJWtY
 
 ## Getting Started
 
